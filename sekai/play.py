@@ -2,7 +2,6 @@ from transformers import AutoTokenizer
 from .sukima_api import Sukima_API
 from .editor import edit_multiline
 from .utils import *
-from .prefix import prefix
 import json
 
 tokenizer = AutoTokenizer.from_pretrained('gpt2')
@@ -19,7 +18,7 @@ banner = """
 
   Story-telling with Lit-6B
 
-  https://github.com/harubaru/sekai
+  https://github.com/harubaru/sekai-cli
 """
 
 def list_items(items):
@@ -163,7 +162,6 @@ class App:
         self.args = {
                 'model': None,
                 'prompt': '',
-                'softprompt': prefix,
                 'sample_args': {
                     'temp': 0.6,
                     'top_p': 0.95,
